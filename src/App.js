@@ -15,46 +15,46 @@ const ResourceFinderApp = () => {
   const resourceCategories = [
     {
       name: 'Police Station',
-      image: 'https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=400&h=300&fit=crop'
+      image: '/images/police.jpg'
     },
     {
       name: 'Clinic/Hospital',
-      image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=400&h=300&fit=crop'
+      image: '/images/hospital_desk.jpg'
     },
     {
       name: 'Food Bank',
-      image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=400&h=300&fit=crop'
+      image: '/images/food.jpg'
     },
     {
       name: 'Housing/Shelter',
-      image: 'https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=400&h=300&fit=crop'
+      image: '/images/houses.jpg'
     },
     {
       name: 'Legal Aid',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&h=300&fit=crop'
+      image: '/images/law.jpg'
     },
     {
       name: 'Transportation',
-      image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=300&fit=crop'
+      image: '/images/bus.jpg'
     }
   ];
 
   const suggestedResources = [
     {
       name: 'Grocery Store',
-      image: 'https://images.unsplash.com/photo-1534723452862-4c874018d66d?w=400&h=300&fit=crop'
+      image: '/images/grocery.jpg'
     },
     {
       name: 'Pharmacy',
-      image: 'https://images.unsplash.com/photo-1576602976047-174e57a47881?w=400&h=300&fit=crop'
+      image: '/images/pharmacy.jpg'
     },
     {
       name: 'Community Center',
-      image: 'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=400&h=300&fit=crop'
+      image: '/images/community.jpg'
     },
     {
       name: 'Food Bank',
-      image: 'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=400&h=300&fit=crop'
+      image: '/images/food_bank.jpg'
     }
   ];
 
@@ -129,13 +129,13 @@ const ResourceFinderApp = () => {
   );
 
   const HomeScreen = () => (
-    <div className="flex-1">
-      <Header title="Resource Finder" />
+    <div className="flex-1 flex flex-col">
+      <Header title="Local Emergency Resource Finder" />
       
-      <div className="px-4 py-3">
-        <div className="flex w-full flex-1 items-stretch rounded-xl h-12">
+      {/* <div className="px-4 py-2">
+        <div className="flex w-full flex-1 items-stretch rounded-xl h-10">
           <div className="text-[#a2abb3] flex border-none bg-[#2c3135] items-center justify-center pl-4 rounded-l-xl">
-            <Search size={24} />
+            <Search size={20} />
           </div>
           <input
             placeholder="Search for resources"
@@ -144,25 +144,25 @@ const ResourceFinderApp = () => {
             className="flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#2c3135] h-full placeholder:text-[#a2abb3] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
           />
         </div>
-      </div>
+      </div> */}
 
-      <div className="grid grid-cols-2 gap-3 p-4">
+      <div className="grid grid-cols-2 gap-2 px-3 py-2 flex-1">
         {resourceCategories.map((resource, index) => (
-          <div key={index} className="flex flex-col gap-3 pb-3">
+          <div key={index} className="flex flex-col gap-2">
             <div
-              className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+              className="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
               style={{ backgroundImage: `url(${resource.image})` }}
             />
-            <p className="text-white text-base font-medium leading-normal">
+            <p className="text-white text-sm font-medium leading-normal">
               {resource.name}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="flex justify-end overflow-hidden px-5 pb-20">
-        <button className="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 bg-[#dce8f3] text-[#121416] text-base font-bold leading-normal tracking-[0.015em] px-6 gap-4">
-          <Phone size={24} />
+      <div className="flex justify-center px-4 pb-24 pt-2">
+        <button className="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 bg-[#dce8f3] text-[#121416] text-base font-bold leading-normal tracking-[0.015em] px-6 gap-3">
+          <Phone size={20} />
           Emergency Call
         </button>
       </div>
@@ -198,11 +198,11 @@ const ResourceFinderApp = () => {
         Suggested
       </h3>
       
-      <div className="flex overflow-x-auto p-4 gap-3">
+      <div className="grid grid-cols-2 gap-3 px-4 pb-24">
         {suggestedResources.map((resource, index) => (
-          <div key={index} className="flex flex-col gap-4 min-w-40">
+          <div key={index} className="flex flex-col gap-3">
             <div
-              className="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+              className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
               style={{ backgroundImage: `url(${resource.image})` }}
             />
             <p className="text-white text-base font-medium leading-normal">
@@ -212,12 +212,6 @@ const ResourceFinderApp = () => {
         ))}
       </div>
 
-      <div className="flex px-4 py-3 pb-20">
-        <div
-          className="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
-          style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=400&fit=crop)' }}
-        />
-      </div>
     </div>
   );
 
@@ -327,7 +321,7 @@ const ResourceFinderApp = () => {
     <div className="flex-1">
       <Header title="Emergency Contacts" showBack />
       
-      <div className="pb-20">
+      <div className="pb-24">
         <h2 className="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">
           Local Hotlines
         </h2>
