@@ -1,29 +1,36 @@
-# AidPoint - Local Emergency Resource Finder
+# AidPoint – Local Emergency Resource Finder
 
-![AidPoint Logo](public/logo192.png)
+<p align="center">
+  <img src="public/logo.png" alt="AidPoint Logo" width="100"/>
+</p>
 
-A React web app with offline-first support using a custom service worker for caching.  
-Built to explore caching strategies, service workers, and progressive web app (PWA) concepts.
+**AidPoint** is a Progressive Web App (PWA) that helps users quickly find **local emergency resources** — such as hospitals, police stations, fire stations, and helplines — with a clean, offline-capable interface.
+
+Built with React and service workers, AidPoint ensures reliability **even with poor or no internet connection**, making it a practical companion during emergencies.
 
 ---
 
-## 🚀 Features
-- ⚡ **Offline support** — service worker caches resources for reliability without network
-- 🖥️ **React-based UI** — fast, modular front-end
-- 📦 **Static asset caching** — CSS, JS, and manifest stored locally
-- 🔄 **Cache versioning** — old caches cleaned up automatically during updates
+## 🌟 Key Features
+
+* 🗺️ **Find Local Resources** — tap into Google Maps data to locate hospitals, shelters, police, and other emergency services
+* 📞 **Quick Call Actions** — one-tap access to 911, hotlines, or saved emergency contacts
+* ⚡ **Offline-First Support** — caches the UI and essential assets for use without a network
+* 📱 **Installable PWA** — works like a native app on iOS/Android and desktop
+* 🖥️ **Modern React UI** — fast, responsive, and mobile-friendly
 
 ---
 
 ## 🛠️ Tech Stack
-- [React](https://reactjs.org/)
-- [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
-- [ESLint](https://eslint.org/) for linting
-- [npm](https://www.npmjs.com/) for package management
+
+* [React](https://reactjs.org/) – UI framework
+* [Service Workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) – offline + caching strategies
+* [Google Maps API](https://developers.google.com/maps) – location data & mapping
+* [Tailwind CSS](https://tailwindcss.com/) – design system
+* [Netlify](https://netlify.com) – deployment & hosting
 
 ---
 
-## 🏗️ Getting Started
+## 🚀 Getting Started
 
 Clone the repository and install dependencies:
 
@@ -31,7 +38,7 @@ Clone the repository and install dependencies:
 git clone https://github.com/ShalomDee/resource-finder.git
 cd resource-finder
 npm install
-````
+```
 
 Run the development server:
 
@@ -52,20 +59,24 @@ npm run build
 ```
 public/
   ├── index.html
-  ├── manifest.json
-  └── sw.js          # Custom service worker
+  ├── manifest.json     # PWA manifest
+  └── sw.js             # Custom service worker
 src/
-  ├── App.js         # Main React app component
+  ├── components/       # Reusable UI components
+  ├── screens/          # App screens (Home, Contacts, Map, etc.)
+  ├── App.js            # Main React app component
   └── ...
 ```
 
 ---
 
-## ✨ Future Improvements
+## 🔮 Roadmap
 
-* Add dynamic API caching (network-first strategy for live data)
-* Installable PWA support
-* CI/CD integration
+* 🔄 Dynamic API caching for live map/search results
+* 🧭 Location-based recommendations (nearest help centers)
+* 📲 SMS-based fallback for low-connectivity areas
+* 🌍 Multi-language support
+* 🔐 Optional authentication for personalized resources
 
 ---
 
