@@ -1,6 +1,6 @@
 # AidPoint - Local Emergency Resource Finder
 
-![AidPoint Logo](public/logo.png)
+![AidPoint Logo](public/logo192.png)
 
 A React web app with offline-first support using a custom service worker for caching.  
 Built to explore caching strategies, service workers, and progressive web app (PWA) concepts.
