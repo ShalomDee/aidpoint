@@ -1,6 +1,6 @@
 {
-  "short_name": "ResourceFinder",
-  "name": "Local Resource Finder",
+  "short_name": "AidPoint",
+  "name": "AidPoint - Local Emergency Resource Finder",
   "icons": [
     {
       "src": "favicon.ico",

@@ -346,7 +346,7 @@ function ResourceFinderApp() {
   // ---- Screens ----
   const HomeScreen = () => (
     <div className="flex flex-col h-screen">
-      <Header title="Local Emergency Resource Finder" />
+      <Header title="Emergency Resource Finder" />
 
       <div className="flex-1 flex flex-col pb-20 overflow-hidden p-4">
         <div className="grid grid-cols-2 gap-4 px-2 py-2 flex-1 min-h-0">
