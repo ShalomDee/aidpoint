@@ -601,12 +601,13 @@ export default function App() {
       return;
     }
     
-    const watchId = navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords;
-        const loc = { lat: latitude, lng: longitude };
-        setUserLocation(loc);
-        setLocationError(null);
+    const watchId = navigator.geolocation.watchPosition(
+    (position) => {
+      setUserLocation({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      });
+      setLocationError(null);
       },
       (error) => {
         let errorMessage = "Location access denied or not available.";
@@ -628,12 +629,9 @@ export default function App() {
       { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 }
     );
 
-    return () => {
-      if (navigator.geolocation.clearWatch) {
-        navigator.geolocation.clearWatch(watchId);
-      }
-    };
-  }, [setUserLocation]);
+    return () => navigator.geolocation.clearWatch(watchId);
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
   // Derived list for offline mode
   const offlineFiltered = useMemo(() => {
