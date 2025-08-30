@@ -4,7 +4,7 @@
 
 The application addresses a fundamental challenge in emergency preparedness: the need for reliable, accessible information when traditional communication channels may be disrupted. Whether facing a natural disaster, personal emergency, or community crisis, AidPoint ensures users can find help through an intuitive, mobile-first interface that prioritizes speed and reliability.
 
-🎥 **Video Demo**: [AidPoint Demo on YouTube](#)
+🎥 **Video Demo**: [AidPoint Demo on YouTube](https://youtu.be/Xt07w23A_9g)
 
 ## Core Features and Functionality
 
