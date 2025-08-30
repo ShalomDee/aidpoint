@@ -8,7 +8,7 @@
 
 Built with React and service workers, AidPoint ensures reliability **even with poor or no internet connection**, making it a practical companion during emergencies.
 
-#### 🎥 Video Demo: [AidPoint Demo on YouTube]https://youtu.be/Xt07w23A_9g
+#### 🎥 Video Demo: [AidPoint Demo on YouTube](https://youtu.be/Xt07w23A_9g)
 
 ---
 
