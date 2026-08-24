@@ -15,6 +15,7 @@ import {
   Plus,
   Check
 } from "lucide-react";
+import { OFFLINE_RESOURCES } from "./data/offlineResources";
 
 // Custom hook for localStorage with fallback
 const useLocalStorage = (key, initialValue) => {
@@ -71,34 +72,6 @@ const emergencyContacts = [
   { name: "Suicide & Crisis Lifeline", number: "988" },
   { name: "National Domestic Violence Hotline", number: "800-799-7233" },
   { name: "RAINN (Rape, Abuse & Incest National Network)", number: "800-656-4673" }
-];
-
-// Minimal offline sample resources (fallback when offline/no API)
-const OFFLINE_RESOURCES = [
-  {
-    name: "Central Police Station",
-    type: "police",
-    lat: 40.7128,
-    lng: -74.006,
-    address: "123 Justice Way, Anytown, USA",
-    phone: "(555) 123-4567"
-  },
-  {
-    name: "General Hospital",
-    type: "hospital",
-    lat: 40.7142,
-    lng: -74.01,
-    address: "456 Health Ave, Anytown, USA",
-    phone: "(555) 987-6543"
-  },
-  {
-    name: "Community Shelter",
-    type: "shelter",
-    lat: 40.7135,
-    lng: -74.008,
-    address: "789 Care St, Anytown, USA",
-    phone: "(555) 111-2222"
-  }
 ];
 
 // ---- UTIL ----
@@ -309,16 +282,16 @@ const MapScreen = React.memo(({
           {!isOnline && offlineFiltered.map((r, idx) => (
             <Marker
               key={`${r.name}-${idx}`}
-              position={{ lat: r.lat, lng: r.lng }}
+              position={{ lat: r.latitude, lng: r.longitude }}
               onClick={() => fetchPlaceDetails({
                 name: r.name,
                 displayName: r.name,
                 vicinity: r.address,
                 phone: r.phone,
-                geometry: { 
+                geometry: {
                   location: {
-                    lat: () => r.lat,
-                    lng: () => r.lng
+                    lat: () => r.latitude,
+                    lng: () => r.longitude
                   }
                 },
               })}
@@ -639,7 +612,7 @@ export default function App() {
     return OFFLINE_RESOURCES.filter((r) =>
       r.name.toLowerCase().includes(q) ||
       r.address?.toLowerCase().includes(q) ||
-      r.type?.toLowerCase().includes(q)
+      r.placesKeyword?.toLowerCase().includes(q)
     );
   }, [debouncedQuery]);
 
