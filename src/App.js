@@ -59,12 +59,12 @@ const CATEGORY_TO_PLACES = {
 
 // ---- STATIC DATA (offline-friendly) ----
 const resourceCategories = [
-  { name: "Police Station", image: "/images/police.jpg" },
-  { name: "Clinic/Hospital", image: "/images/hospital_desk.jpg" },
-  { name: "Food Bank", image: "/images/food.jpg" },
-  { name: "Housing/Shelter", image: "/images/houses.jpg" },
-  { name: "Legal Aid", image: "/images/law.jpg" },
-  { name: "Transportation", image: "/images/bus.jpg" }
+  { name: "Police Station", image: "/images/police.webp" },
+  { name: "Clinic/Hospital", image: "/images/hospital_desk.webp" },
+  { name: "Food Bank", image: "/images/food.webp" },
+  { name: "Housing/Shelter", image: "/images/houses.webp" },
+  { name: "Legal Aid", image: "/images/law.webp" },
+  { name: "Transportation", image: "/images/bus.webp" }
 ];
 
 const emergencyContacts = [
